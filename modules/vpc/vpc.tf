@@ -4,7 +4,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = var.vpc_name
+    Name = var.name
   }
 
 }
@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "igw-${var.vpc_name}"
+    Name = "igw-${var.name}"
   }
 }
 

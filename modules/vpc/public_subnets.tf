@@ -4,7 +4,7 @@
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.64.0/20"
-  availability_zone       = data.aws_availability_zones.available[0]
+  availability_zone       = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch = true
 
   tags = {
@@ -22,7 +22,7 @@ resource "aws_route_table_association" "public_subnet_1" {
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.80.0/20"
-  availability_zone       = data.aws_availability_zones.available[1]
+  availability_zone       = data.aws_availability_zones.available.names[1]
   map_public_ip_on_launch = true
 
   tags = {
@@ -39,7 +39,7 @@ resource "aws_route_table_association" "public_subnet_2" {
 resource "aws_subnet" "public_subnet_3" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.96.0/20"
-  availability_zone       = data.aws_availability_zones.available[2]
+  availability_zone       = data.aws_availability_zones.available.names[2]
   map_public_ip_on_launch = true
 
   tags = {
@@ -57,7 +57,7 @@ resource "aws_route_table_association" "public_subnet_3" {
 resource "aws_subnet" "public_subnet_4" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.112.0/20"
-  availability_zone       = data.aws_availability_zones.available[0]
+  availability_zone       = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch = true
 
   tags = {
