@@ -1,6 +1,6 @@
 /* ---------- Build private subnets ---------- */
 
-// Build private subnet 1
+# Build private subnet 1
 resource "aws_subnet" "private_subnet_1" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.${var.octet}.0.0/20"
@@ -16,7 +16,7 @@ resource "aws_route_table_association" "private_subnet_1" {
   route_table_id = aws_route_table.private_subnets.id
 }
 
-// Build private subnet 2
+# Build private subnet 2
 resource "aws_subnet" "private_subnet_2" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.${var.octet}.16.0/20"
@@ -32,7 +32,7 @@ resource "aws_route_table_association" "private_subnet_2" {
   route_table_id = aws_route_table.private_subnets.id
 }
 
-// Build private subnet 3
+# Build private subnet 3
 resource "aws_subnet" "private_subnet_3" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.${var.octet}.32.0/20"

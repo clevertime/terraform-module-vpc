@@ -1,4 +1,4 @@
-// Have terraform take over default SG
+# Have terraform take over default SG
 resource "aws_default_security_group" "default" {
   vpc_id = aws_vpc.vpc.id
 
@@ -17,7 +17,7 @@ resource "aws_default_security_group" "default" {
   }
 }
 
-// Management security group
+# Management security group
 resource "aws_security_group" "mgmt" {
   name        = join("",[var.name,"management"])
   description = "Allow all traffic from the management subnet"

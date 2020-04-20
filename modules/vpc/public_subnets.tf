@@ -1,6 +1,6 @@
 /* ---------- Build public subnets ---------- */
 
-// Build public subnet 1
+# Build public subnet 1
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.64.0/20"
@@ -18,7 +18,7 @@ resource "aws_route_table_association" "public_subnet_1" {
   route_table_id = aws_route_table.public_subnets.id
 }
 
-// Build public subnet 2
+# Build public subnet 2
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.80.0/20"
@@ -35,7 +35,7 @@ resource "aws_route_table_association" "public_subnet_2" {
   route_table_id = aws_route_table.public_subnets.id
 }
 
-// Build public subnet 3
+# Build public subnet 3
 resource "aws_subnet" "public_subnet_3" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.96.0/20"
@@ -53,7 +53,7 @@ resource "aws_route_table_association" "public_subnet_3" {
   route_table_id = aws_route_table.public_subnets.id
 }
 
-// Build public subnet 4 - Management
+# Build public subnet 4 - Management
 resource "aws_subnet" "public_subnet_4" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.112.0/20"

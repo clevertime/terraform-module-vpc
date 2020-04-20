@@ -1,4 +1,4 @@
-// Build the base VPC
+# Build the base VPC
 resource "aws_vpc" "vpc" {
   cidr_block           = "10.${var.octet}.0.0/16"
   enable_dns_hostnames = true
@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc" {
 
 }
 
-// Build an internet gateway
+# Build an internet gateway
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
 
@@ -18,13 +18,13 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-// Build a NAT gateway
+# Build a NAT gateway
 resource "aws_nat_gateway" "ngw" {
   allocation_id = aws_eip.nat.id
   subnet_id     = aws_subnet.public_subnet_1.id
 }
 
-// Build EIP for NAT gateway
+# Build EIP for NAT gateway
 resource "aws_eip" "nat" {
   vpc = true
 }

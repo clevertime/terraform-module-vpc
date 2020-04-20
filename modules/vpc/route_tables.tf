@@ -1,4 +1,4 @@
-// Build route table for public subnets
+# Build route table for public subnets
 resource "aws_route_table" "public_subnets" {
   vpc_id = aws_vpc.vpc.id
 
@@ -22,7 +22,7 @@ resource "aws_route_table" "public_subnets" {
   }
 }
 
-// Build route table for private subnets
+# Build route table for private subnets
 resource "aws_route_table" "private_subnets" {
   vpc_id = aws_vpc.vpc.id
 
