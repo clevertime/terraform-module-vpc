@@ -24,6 +24,7 @@ provider "aws" {
 ##################
 
 module "vpc" {
-  source   = "../configuration"
-  region   = var.region
+  source   = "../modules/vpc"
+  octet    = "10"
+  name     = "example"
 }
