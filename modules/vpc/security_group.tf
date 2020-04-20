@@ -19,7 +19,7 @@ resource "aws_default_security_group" "default" {
 
 // Management security group
 resource "aws_security_group" "mgmt" {
-  name        = "${var.vpc_name}_management"
+  name        = join("",[var.name,"management"])
   description = "Allow all traffic from the management subnet"
   vpc_id      = aws_vpc.vpc.id
 

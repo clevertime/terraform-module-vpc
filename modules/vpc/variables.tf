@@ -1,6 +1,5 @@
-variable "vpc_name" {}
+variable "name" {}
 variable "octet" {}
-variable "region" {}
 variable "peered_vpc_ids" {
   default = {}
   type    = map

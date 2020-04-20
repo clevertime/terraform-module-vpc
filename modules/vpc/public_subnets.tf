@@ -4,11 +4,11 @@
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.64.0/20"
-  availability_zone       = "${var.region}a"
+  availability_zone       = data.aws_availability_zones.available[0]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.vpc_name}-public-1"
+    Name = "${var.name}-public-1"
   }
 
 }
@@ -22,11 +22,11 @@ resource "aws_route_table_association" "public_subnet_1" {
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.80.0/20"
-  availability_zone       = "${var.region}c"
+  availability_zone       = data.aws_availability_zones.available[1]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.vpc_name}-public-2"
+    Name = "${var.name}-public-2"
   }
 }
 
@@ -39,11 +39,11 @@ resource "aws_route_table_association" "public_subnet_2" {
 resource "aws_subnet" "public_subnet_3" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.96.0/20"
-  availability_zone       = "${var.region}d"
+  availability_zone       = data.aws_availability_zones.available[2]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.vpc_name}-public-3"
+    Name = "${var.name}-public-3"
   }
 
 }
@@ -57,11 +57,11 @@ resource "aws_route_table_association" "public_subnet_3" {
 resource "aws_subnet" "public_subnet_4" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.${var.octet}.112.0/20"
-  availability_zone       = "${var.region}a"
+  availability_zone       = data.aws_availability_zones.available[0]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.vpc_name}-mgmt"
+    Name = "${var.name}-mgmt"
   }
 }
 
